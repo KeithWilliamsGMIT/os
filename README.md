@@ -28,3 +28,7 @@ Once compiled, start the operating system in an emulator:
 ```bash
 qemu-system-x86_64 boot-sector.bin
 ```
+
+## References
+
+[1] [Writing a Simple Operating System - from Scratch by Nick Blundell](https://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf)
