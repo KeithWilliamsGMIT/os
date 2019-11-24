@@ -1,8 +1,22 @@
-; Boot sector program that loops forever.
+; Boot sector program that prints the words
+; "Hello, World" and then loops forever.
 
-; Define an infinate loop.
-loop:
-    jmp loop
+; This directive explicitly states where in
+; memory the boot sector will be loaded so
+; that label references can be corrected.
+[org 0x7c00]
+
+mov bx, HELLO_MSG
+call print_string
+
+; Hang on an infinite loop once the message
+; is printed to the screen.
+jmp $
+
+%include "print-string.asm"
+
+HELLO_MSG:
+    db 'Hello, World!', 0
 
 ; The boot sector program must be 512 bytes
 ; so add enough zero bytes as padding while
