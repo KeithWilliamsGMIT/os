@@ -21,7 +21,7 @@ print_string:
 print_next_letter:
     mov al, [bx]
     cmp al, 0
-    je end
+    je end_print_string
     int 0x10
 
     add bx, 1
@@ -32,7 +32,7 @@ print_next_letter:
 ; the original values of the registers, pop
 ; all their values off the stack. Return to
 ; the calling line.
-end:
+end_print_string:
     mov al, 0x0a
     int 0x10
 
